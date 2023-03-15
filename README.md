@@ -2,14 +2,14 @@
 
 # Dashborad Using [ Pug, SCSS ]
 
-## Hello! I'm **_Mohammed Beltagy_**
+## Hello! I'm _Mohammed Beltagy_
 
-I choosed this project to do because I learned [ Pug, SCSS, Gulp] recently and I see this a suitable implementaion on these skills.
+I choosed this project to do because I has been learned [ Pug, SCSS, Gulp] recently and I see this a suitable implementaion on these skills.
 
 In this project I has been focused on some specific points to learn:
 
 - Creating components that will be included on each page without rebuilding it again using [Pug] instead of [react]
-  => In my opinion it will make learning (how to create single page application with [React]) is easier
+  => In my opinion it will make learning (how to create single page application with [React]) is more easier
 - Creating small framework using sass to make a dry code
 
 ---
