@@ -36,7 +36,7 @@ gulp.task('default', () => {
     root: './docs/',
     livereload: true
   });
-  gulp.watch('./stage/html/index.pug', gulp.series('compile-pug'))
-  gulp.watch('./stage/sass/main.scss', gulp.series('compile-sass'))
-  gulp.watch('./stage/js/app.js', gulp.series('redirect-js'))
+  gulp.watch('./stage/html/**/*.pug', gulp.series('compile-pug'))
+  gulp.watch('./stage/sass/**/*.scss', gulp.series('compile-sass'))
+  gulp.watch('./stage/js/**/*.js', gulp.series('redirect-js'))
 })

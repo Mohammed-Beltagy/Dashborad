@@ -1,0 +1,34 @@
+aside.container
+  h3.logo Beltagy
+  nav
+    a.dashboard(href="index.html")
+      i(class="fa-solid fa-chart-bar")
+      span.text Dashboard
+    a.settings(href="settings.html")
+      i(class="fa-solid fa-gear")
+      span.text Settings
+    a.profile(href="profile.html")
+      i(class="fa-regular fa-user")
+      span.text Profile
+    a.projects(href="projects.html")
+      i(class="fa-solid fa-diagram-project")
+      span.text Projects
+    a.courses(href="courses.html")
+      i(class="fa-solid fa-graduation-cap")
+      span.text Courses
+    a.friends(href="firends.html")
+      i(class="fa-regular fa-circle-user")
+      span.text Friends
+    a.files(href="files.html")
+      i(class="fa-regular fa-file")
+      span.text Files
+    a.plans(href="plans.html")
+      i(class="fa-regular fa-credit-card")
+      span.text Plans
+    //- give (class="active") to the link which has class like body 
+    script.
+      Array.from(document.querySelectorAll('nav a')).forEach(a => {
+        if(document.body.classList.contains(a.className)) {
+          a.classList.add('active')
+        }
+      })

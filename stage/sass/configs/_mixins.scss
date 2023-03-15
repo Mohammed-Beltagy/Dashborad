@@ -1,0 +1,5 @@
+@mixin md-screen() {
+  @media (min-width: 40rem) {
+    @content;
+  }
+}

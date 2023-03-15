@@ -1,5 +1,15 @@
-.page-container {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
+// import configs
+@import 'configs/reset-css';
+@import 'configs/mixins';
+
+// import beltagy framework
+@import 'framework/layout';
+
+// import components
+@import 'components/global-rules';
+@import 'components/sidebar';
+
+// Font Family
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
