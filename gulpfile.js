@@ -9,7 +9,7 @@ const gulp = require("gulp"),
 // Compile Pug Files
 gulp.task('compile-pug', () => gulp.src('./stage/html/index.pug')
                                     .pipe(pug())
-                                    .pipe(gulp.dest("./dist/"))
+                                    .pipe(gulp.dest("./docs/"))
                                     .pipe(connect.reload())
 )
 
@@ -19,21 +19,21 @@ gulp.task('compile-sass', () => gulp.src('./stage/sass/main.scss')
                                     .pipe(sass({outputStyle: "compressed"}))
                                     .pipe(autoprefixer("last 2 versions"))
                                     .pipe(sourcemaps.write())
-                                    .pipe(gulp.dest("./dist/assets/"))
+                                    .pipe(gulp.dest("./docs/assets/"))
                                     .pipe(connect.reload())
 )
 
 // Redirect JS Files
 gulp.task('redirect-js', () => gulp.src('./stage/js/app.js')
                                     .pipe(uglify())
-                                    .pipe(gulp.dest('./dist/assets/'))
+                                    .pipe(gulp.dest('./docs/assets/'))
                                     .pipe(connect.reload())
 )
 
 // Start Server & Watch Changes
 gulp.task('default', () => {
   connect.server({
-    root: './dist/',
+    root: './docs/',
     livereload: true
   });
   gulp.watch('./stage/html/index.pug', gulp.series('compile-pug'))
