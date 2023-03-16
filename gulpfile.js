@@ -7,7 +7,7 @@ const gulp = require("gulp"),
       uglify = require('gulp-uglify');
 
 // Compile Pug Files
-gulp.task('compile-pug', () => gulp.src('./stage/html/index.pug')
+gulp.task('compile-pug', () => gulp.src('./stage/html/*.pug')
                                     .pipe(pug())
                                     .pipe(gulp.dest("./docs/"))
                                     .pipe(connect.reload())
@@ -30,13 +30,16 @@ gulp.task('redirect-js', () => gulp.src('./stage/js/app.js')
                                     .pipe(connect.reload())
 )
 
+// Redirect Images 
+gulp.task('redirect-images', () => gulp.src('./stage/images/**/*.*').pipe(gulp.dest('./docs/assets/images/')))
+
 // Start Server & Watch Changes
 gulp.task('default', () => {
   connect.server({
     root: './docs/',
     livereload: true
   });
-  gulp.watch('./stage/html/**/*.pug', gulp.series('compile-pug'))
+  gulp.watch('./stage/html/**/*.pug', gulp.series(['compile-pug', 'redirect-images']))
   gulp.watch('./stage/sass/**/*.scss', gulp.series('compile-sass'))
   gulp.watch('./stage/js/**/*.js', gulp.series('redirect-js'))
 })

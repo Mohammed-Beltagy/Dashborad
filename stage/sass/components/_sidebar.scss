@@ -8,13 +8,13 @@ aside {
   .logo {
     position: relative;
     width: fit-content;
-    margin: 1em auto;
+    margin: .5em auto;
     font-size: .8em;
     text-transform: uppercase;
 
     @include md-screen() {
       margin-bottom: 2em;
-      font-size: 1.5em;
+      font-size: 1.2em;
 
       &::before {
         content: "";

@@ -1,13 +1,12 @@
 // import configs
 @import 'configs/reset-css';
+@import 'configs/variables';
 @import 'configs/mixins';
-
-// import beltagy framework
-@import 'framework/layout';
 
 // import components
 @import 'components/global-rules';
 @import 'components/sidebar';
+@import 'components/header';
 
 // Font Family
 body {
