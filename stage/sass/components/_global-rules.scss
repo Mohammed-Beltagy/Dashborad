@@ -1,3 +1,36 @@
+/*  ===================
+    Sections Navigation
+    ===================
+    :root
+    scrollbar
+    body
+    Page Layout
+    User Picture
+    Main
+    Page Title
+    Large Boxes Grid => have h4 & span style
+    Buttons
+    */
+:root {
+  @include very-sm-screen {
+    font-size: 0.7rem;
+  }
+}
+::-webkit-scrollbar {
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $blue;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+// Font Family
+body {
+  font-family: "Lexend Deca", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: $black;
+}
+// Page Layout
 .page-container {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -10,4 +43,116 @@
 }
 .container {
   padding: 1.2rem;
+}
+// User Picture
+.user-pic {
+  padding: 0.3em;
+  background-color: #272727;
+  border-radius: 100%;
+}
+// Main
+main {
+  background-color: #f1f5f9;
+  z-index: 1; // for sidebar shadow
+  overflow-x: hidden;
+}
+// Page Title (like dashboard, settings, etc)
+h1 {
+  position: relative;
+  font-size: 2.3rem;
+  font-weight: 500;
+  width: fit-content;
+  margin-bottom: 1em;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0.08em;
+    bottom: -0.1em;
+    left: 0.1em;
+  }
+  &::before {
+    width: 3.5em;
+    background-color: #fff;
+  }
+  &::after {
+    width: 1.2em;
+    background-color: #000;
+  }
+}
+// Large Boxes Grid
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  @include sm-screen {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+  gap: 1rem;
+}
+.box {
+  background-color: #fff;
+  border-radius: 0.4rem;
+  padding: 1em;
+
+  &_has-cover {
+    @extend .box;
+    padding: 0;
+    .body {
+      padding: 1em;
+    }
+  }
+  .box-title {
+    font-size: 1.7em;
+    font-weight: 500;
+    & + p {
+      color: $gray;
+      font-weight: 400;
+      margin-left: 0.3em;
+    }
+  }
+  h4 {
+    font-weight: 400;
+  }
+  span {
+    font-weight: 300;
+    &:not(.dark-color) {
+      color: $gray;
+    }
+  }
+}
+
+// Buttons
+@mixin btn($color) {
+  all: unset;
+  display: block;
+  width: fit-content;
+  color: #fff;
+  font-size: 0.85em;
+  padding: 0.3em 0.8em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color $trans-duration;
+  background-color: $color;
+  &:hover {
+    background-color: lighten($color, 10%);
+  }
+}
+.btn_blue {
+  @include btn($blue);
+}
+.btn_red {
+  @include btn($red);
+}
+.btn_orange {
+  @include btn($orange);
+}
+.btn_green {
+  @include btn($green);
+}
+.btn_gray {
+  @include btn($light-gray);
+}
+.btn_specific {
+  @include btn(transparent);
 }

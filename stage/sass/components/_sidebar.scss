@@ -1,15 +1,19 @@
 aside {
-  box-shadow: 0 0 .8em #ddd;
+  box-shadow: 0 0 0.8em #ddd;
+  z-index: 3;
 
+  @include sm-screen() {
+    padding: 0.3rem !important;
+  }
   @include md-screen() {
     width: 15rem;
-  };
+  }
 
   .logo {
     position: relative;
     width: fit-content;
-    margin: .5em auto;
-    font-size: .8em;
+    margin: 0.5em auto;
+    font-size: 0.8em;
     text-transform: uppercase;
 
     @include md-screen() {
@@ -43,21 +47,21 @@ aside {
   }
 
   nav {
-    padding-top: .5em;
+    padding-top: 0.5em;
   }
   a {
     display: block;
     align-items: center;
     width: fit-content;
-    padding: .5em 1em;
-    margin: 0 auto .2em;
+    padding: 0.5em 1em;
+    margin: 0 auto 0.2em;
     cursor: pointer;
-    transition: background-color .3s;
+    transition: background-color $trans-duration;
 
     &.active,
     &:hover {
       background-color: #f6f6f6;
-      border-radius: .3em;
+      border-radius: 0.3em;
     }
 
     @include md-screen() {

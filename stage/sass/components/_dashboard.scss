@@ -1,0 +1,554 @@
+// Profile Box Styling
+.dashboard .box.profile {
+  padding: 0;
+  .cover {
+    padding: 1em;
+    padding-bottom: 0;
+    position: relative;
+    background-color: $light-gray;
+    display: flex;
+    justify-content: space-between;
+
+    &-bg {
+      width: 13em;
+      transform: scale(1.2);
+      opacity: 0.7;
+
+      @include very-sm-screen {
+        visibility: hidden;
+      }
+    }
+    .user-pic {
+      position: absolute;
+      width: 4em;
+      left: 1.5em;
+      bottom: 0;
+      transform: translateY(50%);
+      border: 0.3em solid #fff;
+      box-shadow: 0 0 0.4em #ddd;
+    }
+  }
+
+  .body {
+    margin-top: 3em;
+    padding: 2em 0;
+    border: solid $light-gray;
+    border-width: 0.1em 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+    @include very-sm-screen {
+      flex-direction: column;
+    }
+  }
+
+  a {
+    --bg-color: $blue;
+    cursor: pointer;
+    margin: 1.8em 1em 1.2em auto;
+  }
+}
+
+// Draft Box Styling
+.dashboard .draft {
+  display: grid;
+  grid-template-rows: auto minmax(15ch, 1fr) auto;
+
+  input[type="text"] {
+    margin: 1em 0;
+  }
+  textarea {
+    height: auto;
+    resize: none;
+  }
+  input[type="text"],
+  textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 0.7em;
+    background-color: $light-gray;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    &:focus {
+      outline: 1px solid $blue;
+    }
+  }
+  a {
+    margin: 1.5em 0 0 auto;
+  }
+}
+
+// Targets Box Styling
+@mixin targets__row($color, $percentage, $text) {
+  .icon {
+    flex-shrink: 0;
+    width: 5em;
+    height: 5em;
+    background-color: lighten($color, 40%);
+    color: $color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 0.3em;
+    background-image: linear-gradient(
+      to right,
+      $color,
+      $color $percentage,
+      lighten($color, 40%) $percentage
+    );
+    &::before,
+    &::after {
+      position: absolute;
+      left: $percentage;
+      transform: translateX(-50%);
+    }
+    &::before {
+      content: $text;
+      font-size: 0.7em;
+      background-color: $color;
+      border-radius: 0.5em;
+      color: #fff;
+      padding: 0.2em 0.4em;
+      bottom: calc(100% + 1em);
+    }
+    &::after {
+      content: "";
+      font-size: 0.8em;
+      bottom: calc(100%);
+      border: 0.5em solid;
+      border-color: $color transparent transparent;
+    }
+  }
+}
+.dashboard .targets {
+  .row {
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    &:nth-child(1) {
+      @include targets__row($blue, 80%, "80%");
+    }
+    &:nth-child(2) {
+      @include targets__row($orange, 55%, "55%");
+    }
+    &:nth-child(3) {
+      @include targets__row($green, 75%, "75%");
+    }
+
+    .content {
+      width: 100%;
+
+      h4 {
+        font-weight: 600;
+        margin: 0.3em 0;
+      }
+    }
+  }
+}
+
+// Tickets Box Styling
+.dashboard .tickets {
+  .body {
+    margin: 1em 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+
+    .ticket {
+      padding: 1em;
+      border: 0.13em solid $light-gray;
+      border-radius: 0.8em;
+      text-align: center;
+
+      &:nth-child(1) {
+        i {
+          color: $orange;
+        }
+      }
+      &:nth-child(2) {
+        i {
+          color: $blue;
+        }
+      }
+      &:nth-child(3) {
+        i {
+          color: $green;
+        }
+      }
+      &:nth-child(4) {
+        i {
+          color: $red;
+        }
+      }
+
+      h4 {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin: 0.2em 0;
+      }
+    }
+  }
+}
+
+// Flex Style Will Be Used In Rows Parent
+@mixin row($border-color, $img-width: 0, $border-radius: 0) {
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    &:not(:last-child) {
+      border-bottom: 0.1em solid $border-color;
+    }
+
+    img {
+      width: $img-width;
+      flex-shrink: 0;
+      border-radius: $border-radius;
+      @include sm-screen() {
+        display: none;
+      }
+    }
+    .text {
+      width: 100%;
+    }
+    :last-child {
+      flex-shrink: 0;
+      color: $black;
+      cursor: unset;
+      &.btn_gray:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
+}
+// News Section Styling
+.dashboard .news .body {
+  @include row($light-gray, 6em, 0.5em);
+}
+
+// Tasks Section Styling
+.dashboard .tasks .body {
+  @include row($light-gray);
+  h4 {
+    font-size: 0.9em;
+    font-weight: 700;
+  }
+  .checked {
+    opacity: 0.3;
+    .text {
+      text-decoration: line-through;
+    }
+  }
+  i {
+    padding: 0.2em;
+    &:hover {
+      color: $red !important;
+      cursor: pointer !important;
+    }
+  }
+}
+
+// Search Items Section Styling
+.dashboard .search-items .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  &:first-child :last-child,
+  :first-child {
+    font-weight: 400;
+    font-size: 1em;
+  }
+
+  &:not(:first-child) {
+    :last-child {
+      flex-shrink: 0;
+      color: $black;
+      cursor: unset;
+      &.btn_gray:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
+}
+
+// Uploads Section Styling
+.dashboard .uploads .body {
+  @include row($light-gray, 2.5em);
+  .row {
+    padding: 0.65em 0;
+  }
+}
+
+// Project Progrees Section Styling
+.dashboard .project-progress {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  .body {
+    position: relative;
+    margin-top: 1em;
+    font-size: 1.1em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 1em;
+      width: 0.16em;
+      height: 12em;
+      top: 5%;
+      background-color: $blue;
+    }
+
+    p {
+      position: relative;
+      line-height: 2.8em;
+      margin-left: 3em;
+      font-weight: 400;
+      z-index: 3;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        border: 0.15em solid $blue;
+        background-color: #fff;
+        left: -2.65em; // (margin left + half of the width) * -1
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:not(:last-of-type)::after {
+        content: "";
+        position: absolute;
+        width: 1.1em;
+        height: 1.1em;
+        border-radius: 100%;
+        background-color: $blue;
+        left: -2.45em;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(4)::after {
+        animation: change-opaciy 1s infinite alternate;
+      }
+
+      @keyframes change-opaciy {
+        to {
+          opacity: 0;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 9em;
+      opacity: 0.3;
+      z-index: 1;
+    }
+  }
+}
+
+// Reminders Section Styling
+.dashboard .reminders .body {
+  padding: 0.5em 0;
+
+  .text {
+    position: relative;
+    margin: 1em 0 1em 3em;
+    font-size: 1em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0.1em;
+      left: -0.8em;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      border-radius: 100%;
+      left: -2.8em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:nth-child(1)::before,
+    &:nth-child(1)::after {
+      background-color: $blue;
+    }
+    &:nth-child(2)::before,
+    &:nth-child(2)::after {
+      background-color: $green;
+    }
+    &:nth-child(3)::before,
+    &:nth-child(3)::after {
+      background-color: $orange;
+    }
+    &:nth-child(4)::before,
+    &:nth-child(4)::after {
+      background-color: $red;
+    }
+
+    h4 {
+      font-size: 0.9em;
+      font-weight: 600;
+      word-spacing: -0.2em;
+    }
+    p {
+      font-size: 0.8em;
+      font-weight: 300;
+      color: $gray;
+      margin: 0.5em 0 0;
+    }
+  }
+}
+
+// Post Section Styling
+.dashboard .post {
+  .author {
+    padding: 1.5em 0 0.5em;
+    display: flex;
+    gap: 1em;
+
+    .user-pic {
+      width: 3em;
+      vertical-align: middle;
+    }
+  }
+
+  .body {
+    padding: 1.6em 0;
+    margin: 1em 0;
+    border: solid $light-gray;
+    border-width: 0.15em 0;
+  }
+
+  .activities {
+    display: flex;
+    justify-content: space-between;
+    color: $gray;
+
+    i {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+// Social Media Section Styling
+@mixin social-color($color, $bg-color) {
+  .icon {
+    background-color: $color;
+  }
+
+  .text {
+    color: $color;
+    background-color: $bg-color;
+
+    .btn_specific {
+      background-color: $color;
+    }
+  }
+}
+.dashboard .social-media .body .row {
+  display: flex;
+  align-items: stretch;
+  margin: 0.6em;
+  height: 3.5em;
+
+  > * {
+    align-items: center;
+  }
+
+  .icon {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    color: #fff;
+  }
+
+  .text {
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .btn_specific {
+      color: #fff;
+    }
+  }
+
+  &.twitter {
+    @include social-color(#1da1f2, #1da1f233);
+  }
+  &.facebook {
+    @include social-color(#1877f2, #1877f233);
+  }
+  &.youtube {
+    @include social-color(#ff0000, #ff000033);
+  }
+  &.linkedin {
+    @include social-color(#0077b5, #0077b533);
+  }
+}
+
+// Projects Table Section Styling
+.dashboard .table {
+  margin-top: 1rem;
+  overflow-x: auto;
+  table {
+    min-width: 55em;
+    width: 100%;
+    border: none;
+    margin-top: 1em;
+    border-spacing: 0;
+    font-size: 0.9em;
+
+    thead {
+      background-color: $light-gray;
+      font-weight: 600;
+    }
+    tr:hover {
+      background-color: #ccc2;
+      transition: background-color $trans-duration;
+    }
+    td {
+      padding: 1em;
+      border: 0.1em solid $light-gray;
+      &:not(:last-child) {
+        border-right: none;
+      }
+      div {
+        pointer-events: none;
+      }
+    }
+  }
+  img {
+    display: inline-block;
+    border-radius: 100%;
+    border: 0.2em solid #fff;
+    width: 2.2em;
+
+    &:not(:first-of-type) {
+      margin-left: -1.2em;
+    }
+  }
+}
