@@ -108,7 +108,6 @@ h1 {
     & + p {
       color: $gray;
       font-weight: 400;
-      margin-left: 0.3em;
     }
   }
   h4 {
@@ -155,4 +154,26 @@ h1 {
 }
 .btn_specific {
   @include btn(transparent);
+}
+// Input Fields
+input[type="text"],
+input[type="search"],
+textarea {
+  all: unset;
+  box-sizing: border-box;
+  border-radius: 0.4em;
+  border: 0.1em solid #ccc;
+  padding: 0.5em;
+  min-width: 100%;
+  font-size: 0.9em;
+
+  &::placeholder {
+    font-size: 0.9em;
+    color: lighten($gray, 15%);
+  }
+  &:disabled {
+    cursor: no-drop;
+    background-color: #f0f4f8;
+    color: #bbb;
+  }
 }

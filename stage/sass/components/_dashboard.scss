@@ -64,12 +64,12 @@
   }
   input[type="text"],
   textarea {
+    display: block;
     width: 100%;
     border: none;
     outline: none;
-    font-size: 0.7em;
+    font-size: 0.8em;
     background-color: $light-gray;
-    padding: 1em;
     border-radius: 0.5em;
 
     &:focus {

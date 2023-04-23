@@ -20,16 +20,12 @@ header {
     }
   }
   input[type="search"] {
-    all: unset;
-    border-radius: 0.6em;
-    border: 0.1em solid #ccc;
-    padding: 0.5em;
     padding-left: 2em;
-    width: 15ch;
+    width: calc(15ch + 2.5em);
     transition: width $trans-duration;
 
     &:focus {
-      width: calc(15ch + 2.5em);
+      width: calc(15ch + 5em);
     }
     &:focus::placeholder {
       color: transparent;

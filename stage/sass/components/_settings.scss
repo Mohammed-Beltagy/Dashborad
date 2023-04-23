@@ -1,0 +1,82 @@
+.settings .site-control .body {
+  display: grid;
+  grid-template-rows: auto minmax(15ch, 1fr);
+  .row {
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      color: $gray;
+      font-weight: 300;
+      font-size: 0.8em;
+      margin-top: 0.2em;
+    }
+
+    .switcher {
+      position: relative;
+      width: 5em;
+      height: 2em;
+      padding: 0.25em;
+      background-color: #ccc;
+      border-radius: 10000em;
+      cursor: pointer;
+      transition: background-color $trans-duration;
+
+      &::before {
+        // Icon
+        font-family: "Font Awesome 5 Free";
+        content: "\f00d";
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // Position Self
+        position: absolute;
+        top: 0.25em;
+        left: 0.25em;
+        width: 1.5em;
+        height: 1.5em;
+        // Design
+        border-radius: 100%;
+        background-color: #fff;
+        color: #ccc;
+        transition: color $trans-duration, left $trans-duration;
+      }
+    }
+
+    input[type="checkbox"] {
+      display: none;
+      &:checked + .switcher {
+        background-color: $blue;
+        &::before {
+          content: "\f00c";
+          color: $blue;
+          left: calc(100% - 1.75em);
+        }
+      }
+    }
+  }
+}
+
+.settings .global-info {
+  label {
+    display: block;
+    font-size: 0.9em;
+    color: $gray;
+    margin-top: 1.5em;
+  }
+  input {
+    display: block;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    a {
+      flex-shrink: 0;
+      margin-inline: 1em;
+      color: $blue;
+    }
+  }
+}
