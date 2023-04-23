@@ -1,10 +1,8 @@
 aside
   box-shadow: 0 0 0.8em #ddd
   z-index: 3
-  @include sm-screen
-    padding: 0.3rem !important
   @include md-screen
-    width: 15rem
+    min-width: 13.5rem
 
   .logo
     position: relative
@@ -14,7 +12,7 @@ aside
     text-transform: uppercase
     @include md-screen
       margin-bottom: 2em
-      font-size: 1.2em
+      font-size: 1em
 
       &::before
         content: ""
@@ -41,12 +39,13 @@ aside
     
   nav
     padding-top: 0.5em
+    font-size: .9rem
+    font-weight: 400
 
   a
     display: block
-    align-items: center
     width: fit-content
-    padding: 0.5em 1em
+    padding: 0.65em 1em
     margin: 0 auto 0.2em
     cursor: pointer
     transition: background-color $trans-duration
@@ -54,12 +53,13 @@ aside
     &.active, &:hover
       background-color: #f6f6f6
       border-radius: 0.3em
-      
+
     @include md-screen
       marign-left: 0
       margin-right: 0
       width: 100%
       display: flex
+      align-items: center
       gap: 1em
 
   .text

@@ -18,7 +18,7 @@ gulp.task("compile-pug", () =>
 // Compile Scss Files With Prefixes
 gulp.task("compile-sass", () =>
   gulp
-    .src("./stage/sass/main.scss")
+    .src("./stage/sass/main.sass")
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(autoprefixer("last 2 versions"))
@@ -51,6 +51,6 @@ gulp.task("default", () => {
     "./stage/html/**/*.pug",
     gulp.series(["compile-pug", "redirect-images"])
   );
-  gulp.watch("./stage/sass/**/*.scss", gulp.series("compile-sass"));
+  gulp.watch("./stage/sass/**/*.sass", gulp.series("compile-sass"));
   gulp.watch("./stage/js/**/*.js", gulp.series("redirect-js"));
 });

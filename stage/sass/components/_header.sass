@@ -18,13 +18,14 @@ header
       font-size: 1em
       color: $gray
     
-  input[type="search"] 
-    padding-left: 2em
-    width: calc(15ch + 2.5em)
+  input[type="search"]
+    font-size: .8rem
+    padding-left: 2.2em
+    width: calc(13ch + 2.2em)
     transition: width $trans-duration
 
     &:focus 
-      width: calc(15ch + 5em)
+      width: calc(15ch + 4em)
     
     &:focus::placeholder 
       color: transparent
@@ -47,8 +48,3 @@ header
         width: 0.5em
         aspect-ratio: 1 / 1
         border-radius: 100%
-      
-    .user-pic 
-      display: inline-block
-      vertical-align: middle
-      width: 1.5em
