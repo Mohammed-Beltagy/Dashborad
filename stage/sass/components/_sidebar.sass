@@ -1,0 +1,68 @@
+aside
+  box-shadow: 0 0 0.8em #ddd
+  z-index: 3
+  @include sm-screen
+    padding: 0.3rem !important
+  @include md-screen
+    width: 15rem
+
+  .logo
+    position: relative
+    width: fit-content
+    margin: 0.5em auto
+    font-size: 0.8em
+    text-transform: uppercase
+    @include md-screen
+      margin-bottom: 2em
+      font-size: 1.2em
+
+      &::before
+        content: ""
+        position: absolute
+        width: 120%
+        height: 0.1em
+        top: 100%
+        transform: translateY(calc(1em + -50%))
+        left: -10%
+        background-color: #000
+        border-radius: 10em
+    
+      &::after
+        content: ""
+        position: absolute
+        width: 1.3em
+        height: 1.3em
+        top: 100%
+        left: 50%
+        transform: translate(-50%, calc(1em + -50%))
+        background-color: #000
+        border-radius: 10em
+        border: 0.3em solid #fff
+    
+  nav
+    padding-top: 0.5em
+
+  a
+    display: block
+    align-items: center
+    width: fit-content
+    padding: 0.5em 1em
+    margin: 0 auto 0.2em
+    cursor: pointer
+    transition: background-color $trans-duration
+
+    &.active, &:hover
+      background-color: #f6f6f6
+      border-radius: 0.3em
+      
+    @include md-screen
+      marign-left: 0
+      margin-right: 0
+      width: 100%
+      display: flex
+      gap: 1em
+
+  .text
+    display: none
+    @include md-screen
+      display: inline-block
