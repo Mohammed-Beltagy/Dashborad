@@ -1,0 +1,42 @@
+.dashboard .grid
+  .user
+    padding: 0
+
+    .welcome
+      overflow: hidden
+      background-color: $light-gray
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+
+      .title
+        padding: 1rem
+
+      .img-container
+        margin-top: -1em
+        margin-right: .3em
+        width: 15em
+        opacity: .7
+        img
+          transform: scale(1.2)
+
+    .user-pic
+      font-size: 3rem
+      padding: .6rem
+      border: .4rem solid #fff
+      box-shadow: 0 0 5px #ddd
+      transform: translateY(-50%) translateX(1rem)
+
+    .body
+      display: flex
+      justify-content: space-evenly
+      border: solid $light-gray
+      border-width: 1px 0
+      padding: 1rem 0
+
+      .title
+        text-align: center
+    
+    a
+      @include btn
+      margin-left: auto

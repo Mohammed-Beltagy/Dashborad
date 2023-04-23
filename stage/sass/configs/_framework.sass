@@ -4,3 +4,18 @@
 @mixin md-screen
   @media (min-width: 45rem) 
     @content
+
+// Btn
+@mixin btn($color: $blue)
+  all: unset
+  display: block
+  width: fit-content
+  color: #fff
+  font-size: .9rem
+  background-color: $color
+  padding: .3rem .6rem
+  border-radius: .4rem
+  cursor: pointer
+  margin: 1rem
+  &:hover
+    background-color: darken($color, 5%)
