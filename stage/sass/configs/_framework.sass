@@ -4,9 +4,12 @@
 @mixin md-screen
   @media (min-width: 45rem) 
     @content
+@mixin lg-screen
+  @media (min-width: 60rem) 
+    @content
 
 // Btn
-@mixin btn($color: $blue)
+@mixin btn($color: $blue, $hover: true)
   all: unset
   display: block
   width: fit-content
@@ -15,7 +18,14 @@
   background-color: $color
   padding: .3rem .6rem
   border-radius: .4rem
-  cursor: pointer
   margin: 1rem
-  &:hover
-    background-color: darken($color, 5%)
+  @if($hover)
+    cursor: pointer
+    &:hover
+      background-color: darken($color, 5%)
+      
+.text-btn
+  @include btn(#eee, false)
+  font-size: .8rem
+  color: $black
+  white-space: nowrap

@@ -42,19 +42,24 @@ body
   padding: .25em
 
 // 4. Input Fields
-input[type="search"]
+input[type="search"], input[type="text"], textarea 
   all: unset
   padding: .7em
   border: 1px solid #ccc
   border-radius: .5em
+  font-size: .8rem
   &:focus
     outline: none
     border-color: $black
+  &::placeholder
+    color: $gray
 
 // 5. Box Title
 .title
-  h2, h3
-    margin: .2em
+  margin-bottom: 1rem
+  h2, h3, h4
+    margin: .2em 0
+    color: $black
   h3
     font-weight: 400
   p, span

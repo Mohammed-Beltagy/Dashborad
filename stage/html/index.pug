@@ -10,6 +10,7 @@ html(lang="en")
       main.container
         h1 Dashboard
         .grid
+          //- User
           article.user
             section.welcome
               .title
@@ -30,8 +31,219 @@ html(lang="en")
                 span earned
             a(href="profile.html") Profile
 
-          article
-          article
+          //- Draft
+          article.draft
+            .title
+              h2 Quick Draft
+              p Write A Draft For Your Ideas
+            section.body
+              input(type="text", placeholder="Title")
+              textarea(placeholder="Your Thought")
+            a(href="#") Save
+
+          //- Targets
+          article.targets
+            .title
+              h2 Yearly Targets
+              p Targets Of The Year
+            section.body
+              .row
+                .icon
+                  i.fa-solid.fa-dollar-sign.fa-lg
+                .text
+                  .title
+                    span Money
+                    h4 $20.000
+                    .progress(data-progress="")
+              .row
+                .icon
+                  i.fa-solid.fa-code.fa-lg
+                .text
+                  .title
+                    span Projects
+                    h4 24
+                    .progress(data-progress="")
+              .row
+                .icon
+                  i.fa-solid.fa-user.fa-lg
+                .text
+                  .title
+                    span Team
+                    h4 12
+                    .progress(data-progress="")
+
+          //- Tickets
+          article.tickets
+            .title
+              h2 Tickets Statistics
+              p Everything About Support Tickets
+            section.body
+              .cell
+                i.fa-regular.fa-rectangle-list.fa-2x
+                .title
+                  h4 2500
+                  span Total
+              .cell
+                i.fa-solid.fa-spinner.fa-2x
+                .title
+                  h4 500
+                  span Pending
+              .cell
+                i.fa-regular.fa-circle-check.fa-2x
+                .title
+                  h4 1900
+                  span Closed
+              .cell
+                i.fa-regular.fa-rectangle-xmark.fa-2x
+                .title
+                  h4 100
+                  span Deleted
+
+          //- Latest News
+          article.latest-news
+            .title
+              h2 Latest News
+            section.body
+              .row
+                img(src="assets/images/dashboard/news-01.png", alt="No Name Image")
+                .title 
+                  h4 Created SASS Section
+                  p New SASS Examples & Tutorials
+                span.text-btn 3 Days Ago
+              .row
+                img(src="assets/images/dashboard/news-02.png", alt="No Name Image")
+                .title 
+                  h4 Changed The Design
+                  p A Brand New Website Design
+                span.text-btn 5 Days Ago
+              .row
+                img(src="assets/images/dashboard/news-03.png", alt="No Name Image")
+                .title 
+                  h4 Team Increased
+                  p 3 Developers Joined The Team
+                span.text-btn 7 Days Ago
+              .row
+                img(src="assets/images/dashboard/news-04.png", alt="No Name Image")
+                .title 
+                  h4 Added Payment Gateway
+                  p Many New Payment Gateways Added
+                span.text-btn 9 Days Ago
+
+          //- Latest Tasks
+          article.latest-tasks
+            .title
+              h2 Latest Tasks
+            section.body
+              .row 
+                .title
+                  h4 Record One New Video
+                  p Record Python Create Exe Project
+                i.fa-regular.fa-trash-can
+              .row 
+                .title
+                  h4 Write Article
+                  p Write Low Level vs High Level Languages
+                i.fa-regular.fa-trash-can
+              .row 
+                .title
+                  h4 Finish Project
+                  p Publish Academy Programming Project
+                i.fa-regular.fa-trash-can
+              .row.checked
+                .title
+                  h4 Attend The Meeting
+                  p Attend The Project Business Analysis Meeting
+                i.fa-regular.fa-trash-can
+              .row 
+                .title
+                  h4 Finish Lesson
+                  p Finish Teaching Flex Box
+                i.fa-regular.fa-trash-can
+
+          //- Top Search Items
+          article.search-items
+            .title
+              h2 Top Search Items 
+            section.body
+              .title
+                span Keyword
+                span Search Count
+              .row
+                span Programming
+                span.text-btn 220
+              .row
+                span JavaScript
+                span.text-btn 180
+              .row
+                span PHP
+                span.text-btn 160
+              .row
+                span Code 
+                span.text-btn 145
+              .row
+                span Design
+                span.text-btn 110
+              .row
+                span Logic
+                span.text-btn 95
+
+          //- Latest Uploads
+          article.latest-uploads
+            .title
+              h2 Latest Uploads
+            section.body
+              .row
+                img(src="assets/images/files/pdf.svg", alt="File Image")
+                .title
+                  h4 my-file.pdf
+                  span Elzero
+                span.text-btn 2.9mb
+              .row
+                img(src="assets/images/files/avi.svg", alt="File Image")
+                .title
+                  h4 My-Video-File.avi
+                  span Admin
+                span.text-btn 4.9mb
+              .row
+                img(src="assets/images/files/psd.svg", alt="File Image")
+                .title
+                  h4 My-Psd-File.pdf
+                  span Osama
+                span.text-btn 4.5mb
+              .row
+                img(src="assets/images/files/zip.svg", alt="File Image")
+                .title
+                  h4 My-Zip-File.pdf
+                  span User
+                span.text-btn 8.9mb
+              .row
+                img(src="assets/images/files/dll.svg", alt="File Image")
+                .title
+                  h4 My-DLL-File.pdf
+                  span Admin
+                span.text-btn 4.9mb
+              .row
+                img(src="assets/images/files/eps.svg", alt="File Image")
+                .title
+                  h4 My-Eps-File.pdf
+                  span Designer
+                span.text-btn 8.9mb
+
+          //- Latest Project Progress
+          article.latest-project-progress 
+            .title
+              h2 Latest Project Progress
+            section.body
+              ul
+                li.done Got The Project
+                li.done Started The Project
+                li.done The Project About To Finish
+                li.in-progress Test The Project
+                li Finish The Project & Get Money
+              img(src="assets/images/dashboard/project.png", alt="Rocket")
+
+
+          //- 
           article
 
     include sources/scripts

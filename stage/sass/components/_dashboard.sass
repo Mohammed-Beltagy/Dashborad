@@ -1,4 +1,17 @@
+/*  ===================
+    Sections Navigation
+    ===================
+    1. User
+    2. Draft
+    3. Targets
+    4. Tickets
+    5. Latest News
+    6. Top Search Items
+    7. Latest Uploads
+    8. Latest Project Progress
+    */
 .dashboard .grid
+  // 1. User
   .user
     padding: 0
 
@@ -40,3 +53,252 @@
     a
       @include btn
       margin-left: auto
+
+  // 2. Draft
+  .draft
+    display: grid
+    grid-template-rows: auto 1fr auto
+    gap: 1rem
+
+    .body 
+      display: grid
+      grid-template-rows: auto 1fr
+      gap: 1rem
+
+      > *
+        background-color: $light-gray
+        border: none
+
+    a
+      @include btn
+      margin: 0 0 0 auto
+
+  // 3. Targets
+  .targets
+    .body
+      .row
+        display: flex
+        align-items: center
+        gap: 1rem
+        &:not(:last-child)
+          margin-bottom: 1rem
+
+        .icon
+          flex-grow: 0
+          flex-shrink: 1
+          width: 5rem
+          aspect-ratio: 1 /1
+          display: flex
+          justify-content: center
+          align-items: center
+
+        .text
+          flex-grow: 1
+            
+          .progress
+            position: relative
+            height: .3rem
+            margin-top: .5em
+            font-size: .7rem
+            &::before
+              position: absolute
+              transform: translateX(-50%)
+              bottom: (calc(100% + .9em))
+              color: #fff
+              padding: .3em .5em
+              border-radius: .3em
+            &::after
+              content: ""
+              position: absolute
+              transform: translateX(-50%)
+              bottom: 100%
+              border: .5em solid
+
+        @mixin target-row($color, $percent, $text)
+          .icon
+            color: $color
+            background-color: lighten($color, 40%)
+
+          .progress
+            background-image: linear-gradient(to right, $color, $color $percent, lighten($color, 40%) $percent)
+            &::before
+              content: $text
+              left: $percent
+              background-color: $color
+            &::after
+              left: $percent
+              border-color: $color transparent transparent
+
+        &:first-child
+          @include target-row($blue, 80%, "80%")
+        &:nth-child(2)
+          @include target-row($orange, 55%, "55%")
+        &:last-child
+          @include target-row($green, 75%, "75%")
+
+  // 4. Tickets
+  .tickets
+    .body
+      @include md-screen
+        display: grid
+        gap: 1rem
+        grid-template-columns: 1fr 1fr
+
+      .cell
+        text-align: center
+        border: 1px solid $light-gray
+        padding: 1.5rem 1.5rem .5rem
+        border-radius: 1rem
+        margin-bottom: 1rem
+        @include md-screen
+          margin-bottom: 0
+
+        &:nth-child(1) i
+          color: $orange
+        &:nth-child(2) i
+          color: $blue
+        &:nth-child(3) i
+          color: $green
+        &:nth-child(4) i
+          color: $red
+          margin-bottom: 0
+
+        h4
+          font-size: 1.5em
+          margin: .5rem 0
+
+  // 5. Latest News
+  .latest-news
+    .row
+      display: flex
+      align-items: center
+      flex-direction: column
+      text-align: center
+      @include md-screen
+        flex-direction: row
+        gap: .5rem
+        text-align: start
+      &:not(:last-child)
+        padding-bottom: 1rem
+        margin-bottom: 1rem
+        border-bottom: 1px solid $light-gray
+
+      img
+        width: 6rem
+        border-radius: .5rem
+
+      .title
+        flex-grow: 1
+        margin: 0
+        h4
+          font-weight: 500
+
+      .text-btn
+        margin: 0
+
+  // 5. Latest Tasks
+  .latest-tasks
+    .row
+      display: flex
+      justify-content: space-between
+      align-items: center
+      gap: 1rem
+      &:not(:last-child)
+        padding-bottom: 1rem
+        margin-bottom: 1rem
+        border-bottom: 1px solid $light-gray
+      &.checked
+        opacity: .4
+        .title
+          text-decoration: line-through
+
+      .title
+        margin: 0
+        h4
+          font-weight: 500
+
+      i:hover
+        color: $red
+        cursor: pointer
+
+  // 6. Top Search Items
+  .search-items .body
+    .title
+      margin-bottom: 0
+
+    > .title
+      font-size: 1.05rem
+
+    > *
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+  // 7. Latest Uploads
+  .latest-uploads .body .row
+    display: flex
+    align-items: center
+    gap: 1rem
+    &:not(:last-child)
+      padding-bottom: .1rem
+      margin-bottom: .1rem
+      border-bottom: 1px solid $light-gray
+
+    img
+      width: 2.5rem
+
+    .title
+      flex-grow: 1
+      margin: 0
+      h4
+        font-weight: 500
+
+  // 8. Latest Project Progress
+  .latest-project-progress .body
+    position: relative
+    min-height: 100%
+
+    ul
+      padding-left: 1.5rem
+      margin-left: 1rem
+      border-left: 2px solid $blue
+      z-index: 2
+
+      li
+        position: relative
+        margin: 1.5rem 0
+        &::before, &::after
+          content: ""
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          aspect-ratio: 1 / 1
+          border-radius: 100%
+        &::before
+          width: 1.5rem
+          left: -2.25rem
+          border: 2px solid $blue
+          background-color: #fff
+        &::after
+          width: 1rem
+          left: -2rem
+          background-color: $blue
+        &:not(.done)::after
+          opacity: 0
+        &.in-progress::after
+          animation: opacity 1s ease-in-out infinite alternate
+        @keyframes opacity
+          0%
+            opacity: 0
+          100%
+            opacity: 1
+    img
+      position: absolute
+      width: 12rem
+      bottom: 4.2rem
+      right: 1rem
+      opacity: .3
+      z-index: 1
+
+
+      
