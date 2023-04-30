@@ -8,24 +8,45 @@
   @media (min-width: 60rem) 
     @content
 
+// Colors
+.c-red
+  color: $red
+.c-green
+  color: $green
+.c-blue
+  color: $blue
+.c-orange
+  color: $orange
+
 // Btn
-@mixin btn($color: $blue, $hover: true)
+.btn, .noevent-btn
   all: unset
   display: block
   width: fit-content
-  color: #fff
-  font-size: .9rem
-  background-color: $color
+  white-space: nowrap
   padding: .3rem .6rem
   border-radius: .4rem
   margin: 1rem
-  @if($hover)
-    cursor: pointer
-    &:hover
-      background-color: darken($color, 5%)
-      
-.text-btn
-  @include btn(#eee, false)
+  background-color: $light-gray
   font-size: .8rem
   color: $black
-  white-space: nowrap
+  &.bg-red, &.bg-green, &.bg-blue, &.bg-orange
+    color: #fff
+.bg-red
+  background-color: $red
+.bg-green
+  background-color: $green
+.bg-blue
+  background-color: $blue
+.bg-orange
+  background-color: $orange
+.btn
+  cursor: pointer
+  &.bg-red:hover
+    background-color: darken($red, 5%)
+  &.bg-green:hover
+    background-color: darken($green, 5%)
+  &.bg-blue:hover
+    background-color: darken($blue, 5%)
+  &.bg-orange:hover
+    background-color: darken($orange, 5%) 

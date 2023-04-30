@@ -29,7 +29,7 @@ html(lang="en")
               .title
                 h3 $8500
                 span earned
-            a(href="profile.html") Profile
+            a.btn.bg-blue(href="profile.html") Profile
 
           //- Draft
           article.draft
@@ -39,7 +39,7 @@ html(lang="en")
             section.body
               input(type="text", placeholder="Title")
               textarea(placeholder="Your Thought")
-            a(href="#") Save
+            a.btn.bg-blue(href="#") Save
 
           //- Targets
           article.targets
@@ -79,22 +79,22 @@ html(lang="en")
               p Everything About Support Tickets
             section.body
               .cell
-                i.fa-regular.fa-rectangle-list.fa-2x
+                i.fa-regular.fa-rectangle-list.fa-2x.c-orange
                 .title
                   h4 2500
                   span Total
               .cell
-                i.fa-solid.fa-spinner.fa-2x
+                i.fa-solid.fa-spinner.fa-2x.c-blue
                 .title
                   h4 500
                   span Pending
               .cell
-                i.fa-regular.fa-circle-check.fa-2x
+                i.fa-regular.fa-circle-check.fa-2x.c-green
                 .title
                   h4 1900
                   span Closed
               .cell
-                i.fa-regular.fa-rectangle-xmark.fa-2x
+                i.fa-regular.fa-rectangle-xmark.fa-2x.c-red
                 .title
                   h4 100
                   span Deleted
@@ -109,25 +109,25 @@ html(lang="en")
                 .title 
                   h4 Created SASS Section
                   p New SASS Examples & Tutorials
-                span.text-btn 3 Days Ago
+                span.noevent-btn 3 Days Ago
               .row
                 img(src="assets/images/dashboard/news-02.png", alt="No Name Image")
                 .title 
                   h4 Changed The Design
                   p A Brand New Website Design
-                span.text-btn 5 Days Ago
+                span.noevent-btn 5 Days Ago
               .row
                 img(src="assets/images/dashboard/news-03.png", alt="No Name Image")
                 .title 
                   h4 Team Increased
                   p 3 Developers Joined The Team
-                span.text-btn 7 Days Ago
+                span.noevent-btn 7 Days Ago
               .row
                 img(src="assets/images/dashboard/news-04.png", alt="No Name Image")
                 .title 
                   h4 Added Payment Gateway
                   p Many New Payment Gateways Added
-                span.text-btn 9 Days Ago
+                span.noevent-btn 9 Days Ago
 
           //- Latest Tasks
           article.latest-tasks
@@ -170,22 +170,22 @@ html(lang="en")
                 span Search Count
               .row
                 span Programming
-                span.text-btn 220
+                span.noevent-btn 220
               .row
                 span JavaScript
-                span.text-btn 180
+                span.noevent-btn 180
               .row
                 span PHP
-                span.text-btn 160
+                span.noevent-btn 160
               .row
                 span Code 
-                span.text-btn 145
+                span.noevent-btn 145
               .row
                 span Design
-                span.text-btn 110
+                span.noevent-btn 110
               .row
                 span Logic
-                span.text-btn 95
+                span.noevent-btn 95
 
           //- Latest Uploads
           article.latest-uploads
@@ -197,37 +197,37 @@ html(lang="en")
                 .title
                   h4 my-file.pdf
                   span Elzero
-                span.text-btn 2.9mb
+                span.noevent-btn 2.9mb
               .row
                 img(src="assets/images/files/avi.svg", alt="File Image")
                 .title
                   h4 My-Video-File.avi
                   span Admin
-                span.text-btn 4.9mb
+                span.noevent-btn 4.9mb
               .row
                 img(src="assets/images/files/psd.svg", alt="File Image")
                 .title
                   h4 My-Psd-File.pdf
                   span Osama
-                span.text-btn 4.5mb
+                span.noevent-btn 4.5mb
               .row
                 img(src="assets/images/files/zip.svg", alt="File Image")
                 .title
                   h4 My-Zip-File.pdf
                   span User
-                span.text-btn 8.9mb
+                span.noevent-btn 8.9mb
               .row
                 img(src="assets/images/files/dll.svg", alt="File Image")
                 .title
                   h4 My-DLL-File.pdf
                   span Admin
-                span.text-btn 4.9mb
+                span.noevent-btn 4.9mb
               .row
                 img(src="assets/images/files/eps.svg", alt="File Image")
                 .title
                   h4 My-Eps-File.pdf
                   span Designer
-                span.text-btn 8.9mb
+                span.noevent-btn 8.9mb
 
           //- Latest Project Progress
           article.latest-project-progress 
@@ -288,22 +288,22 @@ html(lang="en")
                 span
                   i.fab.fa-twitter
                 p 90K Followers
-                a(href="#")  Follow
+                a.noevent-btn(href="#") Follow
               .row
                 span
                   i.fab.fa-facebook-f
                 p 2M Like
-                a(href="#")  Like
+                a.noevent-btn(href="#") Like
               .row
                 span
                   i.fab.fa-youtube
                 p 1M Subs
-                a(href="#")  Subscribe
+                a.noevent-btn(href="#") Subscribe
               .row
                 span
                   i.fab.fa-linkedin
                 p 70K Followers
-                a(href="#")  Follow
+                a.noevent-btn(href="#") Follow
 
           //- Projects Table
           article.table
@@ -329,7 +329,7 @@ html(lang="en")
                     img(src="assets/images/team-members/team-2.png", alt="member-picture")
                     img(src="assets/images/team-members/team-3.png", alt="member-picture")
                     img(src="assets/images/team-members/team-4.png", alt="member-picture")
-                  td.text-btn.pending Pending
+                  td.noevent-btn.bg-orange Pending
                 tr
                   td Elzero Shop
                   td 12 Oct 2021
@@ -339,7 +339,7 @@ html(lang="en")
                     img(src="assets/images/team-members/team-2.png", alt="member-picture")
                     img(src="assets/images/team-members/team-1.png", alt="member-picture")
                     img(src="assets/images/team-members/team-4.png", alt="member-picture")
-                  td.text-btn.in-progress In Progress
+                  td.noevent-btn.bg-blue In Progress
                 tr
                   td Bouba App
                   td 05 Sep 2021
@@ -348,7 +348,7 @@ html(lang="en")
                   td 
                     img(src="assets/images/team-members/team-1.png", alt="member-picture")
                     img(src="assets/images/team-members/team-2.png", alt="member-picture")
-                  td.text-btn.completed Completed
+                  td.noevent-btn.bg-green Completed
                 tr
                   td Mahmoud Website
                   td 22 May 2021
@@ -357,7 +357,7 @@ html(lang="en")
                   td 
                     img(src="assets/images/team-members/team-3.png", alt="member-picture")
                     img(src="assets/images/team-members/team-2.png", alt="member-picture")
-                  td.text-btn.completed Completed
+                  td.noevent-btn.bg-green Completed
                 tr
                   td Sayed Website
                   td 24 May 2021
@@ -366,7 +366,7 @@ html(lang="en")
                   td 
                     img(src="assets/images/team-members/team-4.png", alt="member-picture")
                     img(src="assets/images/team-members/team-2.png", alt="member-picture")
-                  td.text-btn.rejected Rejected
+                  td.noevent-btn.bg-red Rejected
                 tr
                   td Arena Application
                   td 01 Mar 2021
@@ -376,6 +376,6 @@ html(lang="en")
                     img(src="assets/images/team-members/team-1.png", alt="member-picture")
                     img(src="assets/images/team-members/team-2.png", alt="member-picture")
                     img(src="assets/images/team-members/team-3.png", alt="member-picture")
-                  td.text-btn.completed Completed
+                  td.noevent-btn.bg-green Completed
 
     include sources/scripts
