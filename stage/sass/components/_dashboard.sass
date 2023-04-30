@@ -9,6 +9,10 @@
     6. Top Search Items
     7. Latest Uploads
     8. Latest Project Progress
+    9. Reminders
+    10. Latest Post
+    11. Social Media Stats
+    12. Projects Table
     */
 .dashboard .grid
   // 1. User
@@ -20,7 +24,7 @@
       background-color: $light-gray
       display: flex
       justify-content: space-between
-      align-items: flex-start
+      align-items: flex-end
 
       .title
         padding: 1rem
@@ -300,5 +304,163 @@
       opacity: .3
       z-index: 1
 
-
+  // 9. Reminders
+  .reminders .body
+    .title
+      position: relative
+      font-size: .9rem
+      padding-left: 1em
+      margin-left: 2em
+      border-left: 2px solid
+      &:not(:last-child)
+        margin-bottom: 1.5em
+      &::before
+        content: ""
+        position: absolute
+        width: 1em
+        aspect-ratio: 1 / 1
+        border-radius: 100%
+        left: -2em
+        top: 50%
+        transform: translateY(-50%)
       
+      &:nth-child(1)
+        border-color: $blue
+        &::before
+          background-color: $blue
+      &:nth-child(2)
+        border-color: $green
+        &::before
+          background-color: $green
+      &:nth-child(3)
+        border-color: $orange
+        &::before
+          background-color: $orange
+      &:nth-child(4)
+        border-color: $red
+        &::before
+          background-color: $red
+
+  // 10. Latest Post
+  .latest-post .body
+    .headding
+      display: flex
+      align-items: center
+      gap: 1rem
+      
+      img
+        border-radius: 100%
+        width: 3.5rem
+      
+      .title
+        margin-bottom: 0
+    
+    > p
+      padding: 1.5rem 0
+      margin: 1.5rem 0
+      border: solid $light-gray
+      border-width: 1px 0
+      line-height: $main-line-height
+
+    .footer
+      display: flex
+      justify-content: space-between
+
+      span
+        font-size: 1em
+        font-weight: 300
+        display: flex
+        align-items: center
+        gap: .5em
+
+  // 11. Social Media Stats
+  .social-media-stats .body
+    .row
+      display: flex
+      align-items: stretch
+      margin: .5rem 0
+      &:nth-child(1)
+        --color: #1da1f2
+        background-color: rgb(29 161 242 / 20%)
+      &:nth-child(2)
+        --color: #1877f2
+        background-color: rgb(24 119 242 / 20%)
+      &:nth-child(3)
+        --color: #ff0000
+        background-color: rgb(255 0 0 / 20%)
+      &:nth-child(4)
+        --color: #0077b5
+        background-color: rgb(0 119 181 / 20%)
+      
+      span
+        flex-shrink: 0
+        flex-grow: 0
+
+        font-size: 2rem
+        color: #fff
+        background-color: var(--color)
+
+        width: 4rem
+        display: flex
+        justify-content: center
+        align-items: center
+
+      p
+        color: var(--color)
+        flex-grow: 1
+        margin: 1rem
+      
+      a
+        @include btn(var(--color), false)
+        cursor: pointer
+        margin: 1rem
+        align-self: center
+
+  // 12. Projects Table
+  .table
+    grid-column: 1 / -1
+    overflow-x: scroll
+
+    table
+      text-align: left
+      background-color: #eee
+      border-spacing: 1px
+      font-size: .9rem
+      min-width: 50rem
+      width: 100%
+      
+      th, td:not(.text-btn)
+        padding: .8rem
+
+      th
+        font-weight: 700
+
+      tbody tr
+        background-color: #fff
+        font-weight: 400
+        font-size: .9rem
+        transition: background-color .3s
+        &:hover
+          background-color: #FAF7F7
+          
+      img
+        font-size: 1rem
+        width: 2em
+        border-radius: 100%
+        border: solid .15em #fff
+        display: inline-block
+        margin: 0
+        &:not(:first-child)
+          margin-left: -1em
+          
+
+      .text-btn
+        color: #fff
+        &.pending
+          background-color: $orange
+        &.in-progress
+          background-color: $blue
+        &.completed
+          background-color: $green
+        &.rejected
+          background-color: $red

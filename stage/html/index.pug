@@ -242,8 +242,140 @@ html(lang="en")
                 li Finish The Project & Get Money
               img(src="assets/images/dashboard/project.png", alt="Rocket")
 
+          //- Reminders
+          article.reminders 
+            .title
+              h2 Reminders
+            section.body
+              .title
+                h4 Check My Tasks List
+                p 28/09/2022 - 12:00am
+              .title
+                h4 Check My Projects
+                p 26/10/2022 - 12:00am
+              .title
+                h4 Call All My Clients
+                p 05/11/2022 - 12:00am
+              .title
+                h4 Finish The Development Workshop
+                p 20/12/2022 - 12:00am
 
-          //- 
-          article
+          //- Latest Post
+          article.latest-post
+            .title
+              h2 Latest Post
+            section.body
+              .headding
+                img(src="assets/images/team-members/team-1.png", alt="Osama Picture")
+                .title
+                  h4 Osama Elzero
+                  p About 3 Hours Ago
+              p You Can Fool All Of The People Some Of The Time, And Some Of The People All Of The Time, But You Can't Fool All Of The People All Of The Time.
+              .footer.title
+                span
+                  i.fa.fa-heart.fa-regular
+                  | 1.8k
+                span 
+                  i.fa.fa-comments.fa-regular
+                  | 500
+
+          //- Social Media Stats
+          article.social-media-stats
+            .title
+              h2 Social Media Stats
+            section.body
+              .row
+                span
+                  i.fab.fa-twitter
+                p 90K Followers
+                a(href="#")  Follow
+              .row
+                span
+                  i.fab.fa-facebook-f
+                p 2M Like
+                a(href="#")  Like
+              .row
+                span
+                  i.fab.fa-youtube
+                p 1M Subs
+                a(href="#")  Subscribe
+              .row
+                span
+                  i.fab.fa-linkedin
+                p 70K Followers
+                a(href="#")  Follow
+
+          //- Projects Table
+          article.table
+            .title
+              h2 Projects
+            table
+              thead
+                tr
+                  th Name
+                  th Finish Date
+                  th Client
+                  th Price
+                  th Team
+                  th Status
+              tbody
+                tr
+                  td Ministry Wikipedia
+                  td 10 May 2022
+                  td Ministry
+                  td $5300
+                  td
+                    img(src="assets/images/team-members/team-1.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-2.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-3.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-4.png", alt="member-picture")
+                  td.text-btn.pending Pending
+                tr
+                  td Elzero Shop
+                  td 12 Oct 2021
+                  td Elzero Company
+                  td $1500
+                  td 
+                    img(src="assets/images/team-members/team-2.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-1.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-4.png", alt="member-picture")
+                  td.text-btn.in-progress In Progress
+                tr
+                  td Bouba App
+                  td 05 Sep 2021
+                  td Bouba
+                  td $800
+                  td 
+                    img(src="assets/images/team-members/team-1.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-2.png", alt="member-picture")
+                  td.text-btn.completed Completed
+                tr
+                  td Mahmoud Website
+                  td 22 May 2021
+                  td Mahmoud
+                  td $600
+                  td 
+                    img(src="assets/images/team-members/team-3.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-2.png", alt="member-picture")
+                  td.text-btn.completed Completed
+                tr
+                  td Sayed Website
+                  td 24 May 2021
+                  td Sayed
+                  td $300
+                  td 
+                    img(src="assets/images/team-members/team-4.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-2.png", alt="member-picture")
+                  td.text-btn.rejected Rejected
+                tr
+                  td Arena Application
+                  td 01 Mar 2021
+                  td Arena Company
+                  td $2600
+                  td 
+                    img(src="assets/images/team-members/team-1.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-2.png", alt="member-picture")
+                    img(src="assets/images/team-members/team-3.png", alt="member-picture")
+                  td.text-btn.completed Completed
 
     include sources/scripts
