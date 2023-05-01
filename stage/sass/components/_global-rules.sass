@@ -7,7 +7,6 @@
     4. Input Fields
     5. Box Title
     */
-
 // Font
 body 
   font-family: "Lexend Deca", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif
@@ -44,6 +43,7 @@ body
 // 4. Input Fields
 input[type="search"], input[type="text"], textarea 
   all: unset
+  box-sizing: border-box
   padding: .7em
   border: 1px solid #ccc
   border-radius: .5em
@@ -51,6 +51,9 @@ input[type="search"], input[type="text"], textarea
   &:focus
     outline: none
     border-color: $black
+  &:disabled
+    background-color: #f0f4f8
+    color: #bbb
   &::placeholder
     color: $gray
 

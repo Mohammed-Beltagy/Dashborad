@@ -1,0 +1,147 @@
+doctype html
+html(lang="en")
+  head
+    include sources/head
+    title Settings | Beltagy
+  body.settings
+    .page-container
+      include sidebar
+      include header
+      main.container
+        h1 Settings
+        .grid
+          //- Site Control
+          article.site-control
+            .title
+              h2 Site Control
+              p Control The Website If There Is Maintenance
+            section.body
+              .row
+                .title 
+                  h3 Website Control
+                  p Open/Close Website And Type The Reason
+                .switch-container
+                  input#checkbox--site-control(type="checkbox", checked)
+                  label.switch-btn(for="checkbox--site-control")
+              textarea(placeholder="Close Message Content")
+
+          //- General Info
+          article.general-info
+            .title
+              h2 General Info
+              p General Information About Your Account
+            section.body
+              label First Name
+              input(type="text", placeholder="First Name")
+              label Last Name
+              input(type="text", placeholder="Last Name")
+              label Email
+              .email-row
+                input(type="text", placeholder="Email", value="o@nn.sa", disabled)
+                input(type="button", value="Change")
+
+          //- Security Info
+          article.security-info
+            .title
+              h2 Security Info
+              p Security Information About Your Account
+            section.body
+              .row 
+                .title 
+                  h3 Password
+                  p Last Change On 25/10/2021
+                input(type="button", value="Change").btn.bg-blue
+              .row 
+                .title 
+                  h3 Two-Factor Authentication
+                  p Enable/Disable The Feature
+                .switch-container
+                  input#checkbox--two-factor(type="checkbox", checked)
+                  label.switch-btn(for="checkbox--two-factor")
+              .row 
+                .title 
+                  h3 Devices
+                  p Check The Login Devices List
+                input(type="button", value="Devices").btn
+
+          //- Social Info
+          article.social-info
+            .title
+              h2 Social Info
+              p Social Media Information
+            section.body
+              .input-row
+                input.twitter(type="text", placeholder="Twitter Username")
+                span
+                  i.fa.fa-twitter
+              .input-row
+                input.facebook(type="text", placeholder="Facebook Username")
+                span
+                  i.fa.fa-facebook
+              .input-row
+                input.linkedin(type="text", placeholder="Linkedin Username")
+                span
+                  i.fa.fa-linkedin
+              .input-row
+                input.youtube(type="text", placeholder="Youtube Username")
+                span
+                  i.fa.fa-youtube
+
+          //- Widgets Control
+          article.widgets-control
+            .title
+              h2 Widgets Control
+              p Show/Hide Widgets
+            section.body 
+              .checkbox-container
+                input#checkbox--quick-draft(type="checkbox", checked)
+                label(for="checkbox--quick-draft") Quick Draft 
+              .checkbox-container
+                input#checkbox--yearly-targets(type="checkbox", checked)
+                label(for="checkbox--yearly-targets") Yearly Targets
+              .checkbox-container
+                input#checkbox--tickets-statistics(type="checkbox", checked)
+                label(for="checkbox--tickets-statistics") Tickets Statistics
+              .checkbox-container
+                input#checkbox--latest-news(type="checkbox", checked)
+                label(for="checkbox--latest-news") Latest News
+              .checkbox-container
+                input#checkbox--latest-tasks(type="checkbox")
+                label(for="checkbox--latest-tasks") Latest Tasks
+              .checkbox-container
+                input#checkbox--top-search-items(type="checkbox", checked)
+                label(for="checkbox--top-search-items") Top Search Items
+
+          //- Backup Manager
+          article.backup-manager
+            .title
+              h2 Backup Manager
+              p Control Backup Time And Location
+            section.body 
+              .radio-container
+                input#radio--daily(type="radio", name="backup")
+                label(for="radio--daily") Daily
+              .radio-container
+                input#radio--weekly(type="radio", name="backup", checked)
+                label(for="radio--weekly") Weekly
+              .radio-container
+                input#radio--monthly(type="radio", name="backup")
+                label(for="radio--monthly") Monthly
+              section.backup-type
+                .special-radio-container
+                  input#radio--megaman(type="radio", name="backup-type")
+                  label(for="radio--megaman") 
+                    i.fa-solid.fa-server
+                    span Megaman 
+                .special-radio-container
+                  input#radio--zero(type="radio", name="backup-type", checked)
+                  label(for="radio--zero") 
+                    i.fa-solid.fa-server
+                    span Zero
+                .special-radio-container
+                  input#radio--sigma(type="radio", name="backup-type")
+                  label(for="radio--sigma") 
+                    i.fa-solid.fa-server
+                    span Sigma
+
+    include sources/scripts

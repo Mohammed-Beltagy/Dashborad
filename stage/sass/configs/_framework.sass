@@ -50,3 +50,106 @@
     background-color: darken($blue, 5%)
   &.bg-orange:hover
     background-color: darken($orange, 5%) 
+
+// Switch
+.switch-container
+  input[type="checkbox"]
+    display: none
+  .switch-btn
+    position: relative
+    display: block
+    font-size: 1em
+    width: 4.5em
+    height: 2em
+    background-color: #ccc
+    border-radius: 1em
+    cursor: pointer
+    transition: background-color .3s
+    &::before
+      position: absolute
+      top: .25em
+      left: .25em
+      width: 1.5em
+      height: 1.5em
+      background-color: #fff
+      border-radius: 100%
+
+      font-family: "Font Awesome 6 Free"
+      content: "\f00d"
+      font-weight: 900
+      color: #ccc
+      line-height: 1.5em
+      text-align: center
+
+      transition: left .3s
+  input[type="checkbox"]:checked + .switch-btn
+    background-color: $blue
+    &::before
+      content: "\f00c"
+      color: $blue
+      left: calc(100% - 1.75em)
+
+// Checkbox
+.checkbox-container
+  input[type="checkbox"]
+    display: none
+  label
+    position: relative
+    cursor: pointer
+    padding-left: 1.5em
+    &::before, &::after
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      left: 0
+      width: 1.25em
+      height: 1.25em
+      border-radius: .3em
+    &::before
+      content: ""
+      border: 2px solid $gray
+    &::after
+      background-color: $blue
+      font-family: "Font Awesome 6 Free"
+      content: "\f00c"
+      font-weight: 900
+      color: #fff
+      line-height: 1.25em
+      text-align: center
+      transform: translateY(-50%) rotate(180deg) scale(0)
+      transition: transform .3s
+  input[type="checkbox"]:checked + label::after
+      transform: translateY(-50%) rotate(0) scale(1)
+
+// Radio Button
+.radio-container
+  input[type="radio"]
+    display: none
+  label
+    position: relative
+    cursor: pointer
+    padding-left: 1.5em
+    &::before, &::after
+      content: ""
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      border-radius: 100%
+    &::before
+      border: 2px solid $gray
+      left: 0
+      width: 1.25em
+      height: 1.25em
+    &::after
+      background-color: $blue
+      border: .2em solid #fff
+      left: 2px
+      width: calc(1.25em - 4px)
+      height: calc(1.25em - 4px)
+      transform: translateY(-50%) scale(0)
+      transition: transform .3s
+  input[type="radio"]:checked + label
+    &::before
+      border-color: $blue
+    &::after
+      transform: translateY(-50%) scale(1)

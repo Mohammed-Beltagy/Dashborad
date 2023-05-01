@@ -1,0 +1,126 @@
+.settings .grid
+  // 1. Site Control
+  .site-control
+    display: grid
+    grid-template-rows: auto 1fr
+
+    .body
+      display: grid
+      grid-template-rows: auto 1fr
+      
+      .row
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        .title
+          font-size: .85rem
+
+  // 2. General Info
+  .general-info
+    label
+      display: block
+      font-size: .9em
+      color: $gray
+      margin-bottom: .2em
+      &:not(:first-child)
+        margin-top: 1em
+
+    input
+      display: block
+      width: 100%
+
+    .email-row
+      display: flex
+      justify-content: space-between
+      align-items: center
+      gap: 1em
+
+      input[type="button"]
+        all: unset
+        width: fit-content
+        color: $blue
+        cursor: pointer
+
+  // 3. Security Info
+  .security-info .body
+    .row
+      font-size: .9em
+      display: flex
+      align-items: center
+      justify-content: space-between
+      &:not(:last-child)
+        border-bottom: 1px solid $light-gray
+        padding-bottom: 1em
+      &:not(:first-child)
+        padding-top: 1em
+
+      .switch-container
+        margin: 1rem
+
+  // 4. Social Info
+  .social-info .body
+    .input-row
+      display: flex
+      flex-direction: row-reverse
+      align-items: stretch
+      background-color: #f6f6f6
+      border: 1px solid #ccc
+      border-radius: .5em
+      &:not(:last-child)
+        margin-bottom: 1rem
+
+      input
+        flex-grow: 1
+        border-radius: 0
+        border: none
+        &:focus + span
+          color: $black
+
+      span
+        display: flex
+        justify-content: center
+        align-items: center
+        color: $gray
+        width: 2.5rem
+        border-right: 1px solid #ddd
+        transition: color .3s
+
+// 5. Widgets Control
+.widgets-control .body .checkbox-container:not(:last-child)
+  margin-bottom: .7em
+
+// 6. Backup Manager
+.backup-manager .body
+  .radio-container:not(:last-child)
+    margin-bottom: .7em
+  
+  .backup-type
+    display: flex
+    flex-direction: column
+    @include md-screen
+      flex-direction: row
+    gap: .5rem
+    border-top: 1px solid $light-gray
+    padding-top: 1rem
+
+    .special-radio-container
+      width: 100%
+
+      input
+        display: none
+
+      label
+        width: 100%
+        border: 2px solid #eee
+        border-radius: .7em
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 1rem
+        gap: 1rem
+        cursor: pointer
+      
+      input:checked + label
+        color: $blue
+        border-color: $blue
