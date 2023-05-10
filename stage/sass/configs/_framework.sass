@@ -153,3 +153,29 @@
       border-color: $blue
     &::after
       transform: translateY(-50%) scale(1)
+
+// Progress
+.progress
+      height: .4rem
+      width: 10rem
+      border: none
+      background-color: $light-gray
+      border-radius: 50rem
+      overflow: hidden
+      &::-webkit-progress-bar
+        background-color: $light-gray
+      &::-webkit-progress-value
+        border-radius: 50rem
+      &.bg-blue
+        &::-webkit-progress-value
+          background-color: $blue
+      &.bg-red
+        &::-webkit-progress-value
+          background-color: $red
+      &.bg-orange
+        &::-webkit-progress-value
+          background-color: $orange
+      &.bg-green
+        &::-webkit-progress-value
+          background-color: $green
+      
