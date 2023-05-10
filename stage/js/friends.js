@@ -102,7 +102,7 @@ const friends = [
   },
 ];
 
-function createFriendElement(
+function appendElementToGrid(
   imageUrl,
   name,
   jobTitle,
@@ -195,7 +195,7 @@ function createFriendElement(
 }
 
 friends.forEach((friend) => {
-  createFriendElement(
+  appendElementToGrid(
     friend.avatar,
     friend.name,
     friend.jobTitle,

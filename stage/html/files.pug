@@ -10,5 +10,38 @@ html(lang="en")
       main.container
         h1 Files
         .grid
+          section.files-statistics
+            .title 
+              h2 Files Statistics
+            .row
+              i.fa-regular.fa-file-pdf
+              .title 
+                h3 PDF Files
+                span 130 Files
+              span.size 6.5GB
+            .row
+              i.fa-regular.fa-images
+              .title 
+                h3 Images
+                span 115 Files
+              span.size 3.5GB
+            .row
+              i.fa-regular.fa-file-word
+              .title 
+                h3 Word Files
+                span 110 Files
+              span.size 3.2GB
+            .row
+              i.fa-solid.fa-file-csv
+              .title 
+                h3 CSV Files
+                span 99 Files
+              span.size 2.9GB
+            a.btn.bg-blue(href="#")
+              i.fa-solid.fa-angles-up
+              | Upload
+
+          section.files-grid
 
     include sources/scripts
+    script(src="assets/js/files.js") 
