@@ -1,6 +1,6 @@
 # Dashboard Project using Pug, Sass, JavaScript, and Gulp.js
 
-![Dashboard Project Cover Image](cover.jpg)
+![Dashboard Project Cover Image](cover.png)
 
 ## Introduction
 
