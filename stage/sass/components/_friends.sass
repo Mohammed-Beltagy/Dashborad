@@ -1,0 +1,82 @@
+.friends .grid
+  grid-template-columns: 1fr !important
+  @include md-screen
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)) !important
+  
+  article
+    position: relative
+
+    .buttons
+      position: absolute
+      top: .7rem
+      left: .7rem
+
+      i
+        color: $gray
+        background-color: $light-gray
+        border-radius: 100%
+        font-size: .9rem
+        padding: .6rem
+        margin-right: .3rem
+        cursor: pointer
+        transition: color .3s, background-color .3s
+        &:hover
+          color: #fff
+          background-color: $blue
+    
+    .row:nth-child(2)
+      text-align: center
+      
+      img
+        margin: 1rem auto
+        border-radius: 100%
+        width: 6rem
+      
+      span
+        font-size: .8rem
+        font-weight: 300
+    
+    .row:nth-child(3)
+      border: solid $light-gray
+      border-width: 1px 0
+      padding: 1rem 0
+
+      span
+        display: block
+        font-size: .9rem
+        &:not(:last-child)
+          margin-bottom: .5rem
+
+        i
+          margin-right: .3rem
+
+    &.vip .row:nth-child(3)
+      position: relative
+      &::after
+        content: "VIP"
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        color: $orange
+        font-size: 2.8rem
+        font-weight: 700
+        opacity: .2
+    
+    .row:nth-child(4)
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding-top: 1rem
+
+      span
+        color: $gray
+        font-size: .8rem
+        font-weight: 300
+
+      a
+        margin: 0
+        display: inline-block
+        padding: .25rem .7rem
+        &:first-child
+          margin-right: .3rem
