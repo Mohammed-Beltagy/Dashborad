@@ -15,7 +15,7 @@ gulp.task("compile-pug", () =>
     .pipe(connect.reload())
 );
 
-// Compile Scss Files With Prefixes
+// Compile Sass Files With Prefixes
 gulp.task("compile-sass", () =>
   gulp
     .src("./stage/sass/main.sass")
@@ -23,6 +23,16 @@ gulp.task("compile-sass", () =>
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(autoprefixer("last 2 versions"))
     .pipe(sourcemaps.write())
+    .pipe(gulp.dest("./docs/assets/"))
+    .pipe(connect.reload())
+);
+
+// Compile Sass Files With Prefixes With No Map
+gulp.task("nomap-sass", () =>
+  gulp
+    .src("./stage/sass/main.sass")
+    .pipe(sass({ outputStyle: "compressed" }))
+    .pipe(autoprefixer("last 2 versions"))
     .pipe(gulp.dest("./docs/assets/"))
     .pipe(connect.reload())
 );

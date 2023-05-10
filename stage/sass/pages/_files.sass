@@ -5,9 +5,9 @@
     grid-template-columns: 1fr auto !important
     
   .files-statistics
-    background-color: #fff
+    background-color: $white
     border-radius: .5rem
-    padding: 1rem
+    padding: $main-padding
     @include md-screen
       order: 2
 
@@ -21,7 +21,7 @@
       border: 1px solid $light-gray
       border-radius: .3em
       &:not(:last-child)
-        margin-bottom: 1rem
+        margin-bottom: $main-padding
 
       i
         width: 2.8rem
@@ -74,13 +74,13 @@
   .files-grid
     display: grid
     grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)) !important
-    gap: 1rem
+    gap: $main-padding
     @include md-screen
       grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)) !important
     
     article
       position: relative
-      background-color: #fff
+      background-color: $white
       border-radius: .5rem
       padding: .5rem
 
@@ -92,7 +92,7 @@
 
       img
         width: 4rem
-        margin: 1rem auto
+        margin: $main-padding auto
 
       h3
         font-size: .9em

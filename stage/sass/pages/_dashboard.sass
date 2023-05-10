@@ -27,7 +27,7 @@
       align-items: flex-end
 
       .title
-        padding: 1rem
+        padding: $main-padding
 
       .img-container
         margin-top: -1em
@@ -40,16 +40,16 @@
     .user-pic
       font-size: 3rem
       padding: .6rem
-      border: .4rem solid #fff
+      border: .4rem solid $white
       box-shadow: 0 0 5px #ddd
-      transform: translateY(-50%) translateX(1rem)
+      transform: translateY(-50%) translateX($main-padding)
 
     .body
       display: flex
       justify-content: space-evenly
       border: solid $light-gray
       border-width: 1px 0
-      padding: 1rem 0
+      padding: $main-padding 0
 
       .title
         text-align: center
@@ -61,12 +61,12 @@
   .draft
     display: grid
     grid-template-rows: auto 1fr auto
-    gap: 1rem
+    gap: $main-padding
 
     .body 
       display: grid
       grid-template-rows: auto 1fr
-      gap: 1rem
+      gap: $main-padding
 
       > *
         background-color: $light-gray
@@ -81,9 +81,9 @@
       .row
         display: flex
         align-items: center
-        gap: 1rem
+        gap: $main-padding
         &:not(:last-child)
-          margin-bottom: 1rem
+          margin-bottom: $main-padding
 
         .icon
           flex-grow: 0
@@ -106,7 +106,7 @@
               position: absolute
               transform: translateX(-50%)
               bottom: (calc(100% + .9em))
-              color: #fff
+              color: $white
               padding: .3em .5em
               border-radius: .3em
             &::after
@@ -143,15 +143,15 @@
     .body
       @include md-screen
         display: grid
-        gap: 1rem
+        gap: $main-padding
         grid-template-columns: 1fr 1fr
 
       .cell
         text-align: center
         border: 1px solid $light-gray
         padding: 1.5rem 1.5rem .5rem
-        border-radius: 1rem
-        margin-bottom: 1rem
+        border-radius: $main-padding
+        margin-bottom: $main-padding
         @include md-screen
           margin-bottom: 0
 
@@ -171,8 +171,8 @@
         gap: .5rem
         text-align: start
       &:not(:last-child)
-        padding-bottom: 1rem
-        margin-bottom: 1rem
+        padding-bottom: $main-padding
+        margin-bottom: $main-padding
         border-bottom: 1px solid $light-gray
 
       img
@@ -194,10 +194,10 @@
       display: flex
       justify-content: space-between
       align-items: center
-      gap: 1rem
+      gap: $main-padding
       &:not(:last-child)
-        padding-bottom: 1rem
-        margin-bottom: 1rem
+        padding-bottom: $main-padding
+        margin-bottom: $main-padding
         border-bottom: 1px solid $light-gray
       &.checked
         opacity: .4
@@ -230,7 +230,7 @@
   .latest-uploads .body .row
     display: flex
     align-items: center
-    gap: 1rem
+    gap: $main-padding
     &:not(:last-child)
       padding-bottom: .1rem
       margin-bottom: .1rem
@@ -252,7 +252,7 @@
 
     ul
       padding-left: 1.5rem
-      margin-left: 1rem
+      margin-left: $main-padding
       border-left: 2px solid $blue
       z-index: 2
 
@@ -270,9 +270,9 @@
           width: 1.5rem
           left: -2.25rem
           border: 2px solid $blue
-          background-color: #fff
+          background-color: $white
         &::after
-          width: 1rem
+          width: $main-padding
           left: -2rem
           background-color: $blue
         &:not(.done)::after
@@ -288,7 +288,7 @@
       position: absolute
       width: 12rem
       bottom: 4.2rem
-      right: 1rem
+      right: $main-padding
       opacity: .3
       z-index: 1
 
@@ -334,7 +334,7 @@
     .headding
       display: flex
       align-items: center
-      gap: 1rem
+      gap: $main-padding
       
       img
         border-radius: 100%
@@ -385,7 +385,7 @@
         flex-grow: 0
 
         font-size: 2rem
-        color: #fff
+        color: $white
         background-color: var(--color)
 
         width: 4rem
@@ -396,13 +396,13 @@
       p
         color: var(--color)
         flex-grow: 1
-        margin: 1rem
+        margin: $main-padding
       
       a
-        color: #fff
+        color: $white
         background-color: var(--color)
         cursor: pointer
-        margin: 1rem
+        margin: $main-padding
         align-self: center
 
   // 12. Projects Table
@@ -425,18 +425,18 @@
         font-weight: 700
 
       tbody tr
-        background-color: #fff
+        background-color: $white
         font-weight: 400
         font-size: .9rem
-        transition: background-color .3s
+        transition: background-color $trans-duration
         &:hover
           background-color: #FAF7F7
           
       img
-        font-size: 1rem
+        font-size: $main-padding
         width: 2em
         border-radius: 100%
-        border: solid .15em #fff
+        border: solid .15em $white
         display: inline-block
         margin: 0
         &:not(:first-child)

@@ -17,7 +17,7 @@
       align-items: center
       gap: .5rem
       margin-bottom: 2rem
-      padding-inline: 1rem
+      padding-inline: $main-padding
       @include md-screen
         margin-bottom: 0
         padding-inline: 3rem
@@ -67,7 +67,7 @@
           flex-wrap: wrap
         gap: .7rem
         font-size: .9rem
-        transition: background-color .3s
+        transition: background-color $trans-duration
         &:not(:last-child)
           border-bottom: 1px solid $light-gray
         &:hover
@@ -116,7 +116,7 @@
       display: flex
       align-items: center
       gap: .7rem
-      padding: 1rem 0
+      padding: $main-padding 0
       &:not(:last-child)
         border-bottom: 1px solid $light-gray
       

@@ -56,7 +56,7 @@
         padding-top: 1em
 
       .switch-container
-        margin: 1rem
+        margin: $main-padding
 
   // 4. Social Info
   .social-info .body
@@ -68,7 +68,7 @@
       border: 1px solid #ccc
       border-radius: .5em
       &:not(:last-child)
-        margin-bottom: 1rem
+        margin-bottom: $main-padding
 
       input
         flex-grow: 1
@@ -84,7 +84,7 @@
         color: $gray
         width: 2.5rem
         border-right: 1px solid #ddd
-        transition: color .3s
+        transition: color $trans-duration
 
   // 5. Widgets Control
   .widgets-control .body .checkbox-container:not(:last-child)
@@ -102,7 +102,7 @@
         flex-direction: row
       gap: .5rem
       border-top: 1px solid $light-gray
-      padding-top: 1rem
+      padding-top: $main-padding
 
       .special-radio-container
         width: 100%
@@ -117,8 +117,8 @@
           display: flex
           flex-direction: column
           align-items: center
-          padding: 1rem
-          gap: 1rem
+          padding: $main-padding
+          gap: $main-padding
           cursor: pointer
         
         input:checked + label

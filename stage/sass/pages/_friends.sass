@@ -19,16 +19,16 @@
         padding: .6rem
         margin-right: .3rem
         cursor: pointer
-        transition: color .3s, background-color .3s
+        transition: color $trans-duration, background-color $trans-duration
         &:hover
-          color: #fff
+          color: $white
           background-color: $blue
     
     .row:nth-child(2)
       text-align: center
       
       img
-        margin: 1rem auto
+        margin: $main-padding auto
         border-radius: 100%
         width: 6rem
       
@@ -39,7 +39,7 @@
     .row:nth-child(3)
       border: solid $light-gray
       border-width: 1px 0
-      padding: 1rem 0
+      padding: $main-padding 0
 
       span
         display: block
@@ -67,7 +67,7 @@
       display: flex
       justify-content: space-between
       align-items: center
-      padding-top: 1rem
+      padding-top: $main-padding
 
       span
         color: $gray

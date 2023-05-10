@@ -19,17 +19,17 @@ body
 
 // 1. scrollbar
 ::-webkit-scrollbar 
-  background-color: #fff
+  background-color: $white
 ::-webkit-scrollbar-thumb 
   background-color: $blue
 ::-webkit-scrollbar-track 
-  background-color: #fff
+  background-color: $white
 
 // 2. container
 .container
   padding: .3rem
   @include md-screen
-    padding: 1rem
+    padding: $main-padding
       
 // 3. Just Beltagy Pic
 .just-beltagy-pic
@@ -59,7 +59,7 @@ input[type="search"], input[type="text"], textarea
 
 // 5. Box Title
 .title
-  margin-bottom: 1rem
+  margin-bottom: $main-padding
   h2, h3, h4
     margin: .2em 0
     color: $black

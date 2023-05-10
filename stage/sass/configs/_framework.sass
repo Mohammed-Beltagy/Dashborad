@@ -26,12 +26,12 @@
   white-space: nowrap
   padding: .3rem .6rem
   border-radius: .4rem
-  margin: 1rem
+  margin: $main-padding
   background-color: $light-gray
   font-size: .8rem
   color: $black
   &.bg-red, &.bg-green, &.bg-blue, &.bg-orange
-    color: #fff
+    color: $white
 .bg-red
   background-color: $red
 .bg-green
@@ -64,14 +64,14 @@
     background-color: #ccc
     border-radius: 1em
     cursor: pointer
-    transition: background-color .3s
+    transition: background-color $trans-duration
     &::before
       position: absolute
       top: .25em
       left: .25em
       width: 1.5em
       height: 1.5em
-      background-color: #fff
+      background-color: $white
       border-radius: 100%
 
       font-family: "Font Awesome 6 Free"
@@ -81,7 +81,7 @@
       line-height: 1.5em
       text-align: center
 
-      transition: left .3s
+      transition: left $trans-duration
   input[type="checkbox"]:checked + .switch-btn
     background-color: $blue
     &::before
@@ -113,11 +113,11 @@
       font-family: "Font Awesome 6 Free"
       content: "\f00c"
       font-weight: 900
-      color: #fff
+      color: $white
       line-height: 1.25em
       text-align: center
       transform: translateY(-50%) rotate(180deg) scale(0)
-      transition: transform .3s
+      transition: transform $trans-duration
   input[type="checkbox"]:checked + label::after
       transform: translateY(-50%) rotate(0) scale(1)
 
@@ -142,12 +142,12 @@
       height: 1.25em
     &::after
       background-color: $blue
-      border: .2em solid #fff
+      border: .2em solid $white
       left: 2px
       width: calc(1.25em - 4px)
       height: calc(1.25em - 4px)
       transform: translateY(-50%) scale(0)
-      transition: transform .3s
+      transition: transform $trans-duration
   input[type="radio"]:checked + label
     &::before
       border-color: $blue
