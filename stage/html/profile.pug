@@ -10,5 +10,147 @@ html(lang="en")
       main.container
         h1 Profile
         .grid
+          //- Information
+          article.information
+            section.avatar
+              img.just-beltagy-pic(src="assets/images/user-pic.svg", alt="User Picture")
+              h3 Beltagy
+              span Level 20
+              progress(value="70", max="100")
+              .stars
+                - for (var x = 0; x < 5; x++)
+                  i.fa-solid.fa-star
+              span.rating 550 Rating
+              
+            section.all-info-container 
+              section.info-container
+                span.info-title General Information
+                span.info
+                  span.name Full Name:
+                  span.value Osama Mohamed
+                span.info
+                  span.name Gender:
+                  span.value Male
+                span.info
+                  span.name Country:
+                  span.value Egypt
+                .switch-container
+                  input#checkbox--general-info(type="checkbox", checked)
+                  label.switch-btn(for="checkbox--general-info")
+
+              section.info-container
+                span.info-title Personal Information
+                span.info
+                  span.name Email:
+                  span.value o@nn.sa
+                span.info
+                  span.name Phone:
+                  span.value 019123456789
+                span.info
+                  span.name Date Of Birth:
+                  span.value 25/10/1982
+                .switch-container
+                  input#checkbox--personal-info(type="checkbox")
+                  label.switch-btn(for="checkbox--personal-info")
+
+              section.info-container
+                span.info-title Job Information
+                span.info
+                  span.name Title:
+                  span.value Full Stack Developer
+                span.info
+                  span.name Language:
+                  span.value Python
+                span.info
+                  span.name Years Of Experience: 
+                  span.value 15+
+                .switch-container
+                  input#checkbox--job-info(type="checkbox", checked)
+                  label.switch-btn(for="checkbox--job-info")
+
+              section.info-container
+                span.info-title Billing Information
+                span.info
+                  span.name Payment Method:
+                  span.value Paypal
+                span.info
+                  span.name Email: 
+                  span.value email@website.com
+                span.info
+                  span.name Subscription:
+                  span.value Monthly
+                .switch-container
+                  input#checkbox--billing-info(type="checkbox")
+                  label.switch-btn(for="checkbox--billing-info")
+
+          //- My Skills
+          article.my-skills
+            .title 
+              h2 My Skills
+              p Compelete Skills List
+            section.body 
+              .row 
+                span.noevent-btn HTML
+                span.noevent-btn Pugjs
+                span.noevent-btn HAML
+              .row 
+                span.noevent-btn CSS
+                span.noevent-btn SASS
+                span.noevent-btn Stylus
+              .row 
+                span.noevent-btn JavaScript
+                span.noevent-btn TypeScript
+              .row 
+                span.noevent-btn Vuejs
+                span.noevent-btn Reactjs
+              .row 
+                span.noevent-btn Jest
+                span.noevent-btn Jasmine
+              .row 
+                span.noevent-btn PHP
+                span.noevent-btn Laravel
+              .row 
+                span.noevent-btn Python
+                span.noevent-btn Django
+
+          //- Latest Activities
+          article.latest-activities
+            .title 
+              h2 Latest Activities
+              p Latest Activities Done By The User
+            section.body 
+              .row
+                img(src="assets/images/activities/activity-01.png", alt="Activity Icon")
+                .title
+                  h3 Store
+                  p Bought The Mastering Python Course
+                .title
+                  h3 18:10
+                  span Yesterday
+              .row
+                img(src="assets/images/activities/activity-02.png", alt="Activity Icon")
+                .title
+                  h3 Academy
+                  p Got The PHP Certificate
+                .title
+                  h3 16:05
+                  span Yesterday
+              .row
+                img(src="assets/images/activities/activity-03.png", alt="Activity Icon")
+                .title
+                  h3 Badges
+                  p Unlocked The 10 Skills Badge
+                .title
+                  h3 18:05
+                  span Yesterday
+              .row
+                img(src="assets/images/activities/activity-01.png", alt="Activity Icon")
+                .title
+                  h3 Store
+                  p Bought The Typescript Course
+                .title
+                  h3 12:05
+                  span Yesterday
+
 
     include sources/scripts

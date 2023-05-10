@@ -1,0 +1,157 @@
+.profile .grid
+  grid-template-columns: minmax(12rem, 1fr) !important
+  @include md-screen
+    grid-template-columns: minmax(6rem, 1fr) minmax(12rem, 2fr) !important
+
+  // 1. Information
+  .information
+    padding: 0
+    overflow: hidden
+    @include md-screen
+      grid-column: span 2 
+      display: flex
+      align-items: stretch
+    .avatar
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: .5rem
+      margin-bottom: 2rem
+      padding-inline: 1rem
+      @include md-screen
+        margin-bottom: 0
+        padding-inline: 3rem
+        justify-content: center
+        position: relative
+        &::after
+          content: ""
+          position: absolute
+          right: 0
+          top: 50%
+          transform: translateY(-50%)
+          height: 70%
+          width: 1px
+          background-color: $light-gray
+
+      img
+        font-size: 5rem
+      
+      h3
+        font-size: 1.7rem
+        font-weight: 500
+      
+      span
+        color: $gray
+        &.rating
+          font-size: .9rem
+
+      progress
+        height: .4rem
+        width: 10rem
+        border: none
+        background-color: $light-gray
+        border-radius: 5rem
+        overflow: hidden
+        &::-webkit-progress-bar
+          background-color: $light-gray
+        &::-webkit-progress-value
+          background-color: $blue
+          border-radius: 5rem
+
+      .stars
+        color: $orange
+        font-size: .9rem
+        display: flex
+        gap: .3rem
+        margin: .3rem 0
+
+    .all-info-container
+      @include md-screen
+        flex-grow: 1
+
+      .info-container
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: .8rem
+        @include md-screen
+          align-items: flex-start
+          flex-direction: row
+          flex-wrap: wrap
+        gap: .7rem
+        font-size: .9rem
+        transition: background-color .3s
+        &:not(:last-child)
+          border-bottom: 1px solid $light-gray
+        &:hover
+          background-color: #fafafa
+        
+        .info-title
+          color: $gray
+          @include md-screen
+            width: 100%
+
+        .info
+          @include md-screen
+            min-width: 14.5rem
+
+        .name
+          color: $gray
+          padding-right: 1ch
+        
+        .switch-container
+          font-size: .5rem
+          label
+            width: 10em
+
+  // 2. My Skills
+  .my-skills
+    .row
+      display: flex
+      flex-wrap: wrap
+      padding: .8em 0
+      gap: .3em
+      justify-content: center
+      @include md-screen
+        justify-content: flex-start
+      &:not(:last-child)
+        border-bottom: 1px solid $light-gray
+      span
+        margin: 0
+        font-size: 0.9em
+
+  // 3. Latest Activities
+  .latest-activities
+    .title
+      margin-bottom: 0
+
+    .row
+      display: flex
+      align-items: center
+      gap: .7rem
+      padding: 1rem 0
+      &:not(:last-child)
+        border-bottom: 1px solid $light-gray
+      
+      img
+        width: 4rem
+        align-self: center
+
+      .title
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        *
+          font-size: 1em
+          padding: 0
+          margin: 0
+          font-weight: 300
+        p, span
+          font-size: 1em
+
+      .title:nth-child(2)
+        flex-grow: 1
+      
+      .title:last-child
+        flex-shrink: 1
+        text-align: end
