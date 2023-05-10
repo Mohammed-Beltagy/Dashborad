@@ -1,0 +1,55 @@
+.plans .grid article
+  border-radius: 0 !important
+  .true
+    color: $green
+  .false
+    color: $red
+
+  .cover
+    width: 100%
+    color: #fff
+    padding: 1rem
+    text-align: center
+    border: .2rem solid #fff
+    outline: .2rem solid transparent
+    margin-bottom: 1rem
+    &.bg-green
+      outline-color: $green
+    &.bg-blue
+      outline-color: $blue
+    &.bg-orange
+      outline-color: $orange
+
+    span
+      position: relative
+      font-size: 2.5rem
+
+      &::before
+        content: "$"
+        position: absolute
+        top: -.5rem
+        left: -1.2rem
+        font-size: 1.5rem
+        font-weight: 300
+  
+  li
+    display: flex
+    align-items: center
+    gap: .3rem
+    padding: 1rem 0
+    border-bottom: 1px solid $light-gray
+
+    p
+      flex-grow: 1
+
+    :last-child
+      color: $gray
+
+  .btn
+    font-size: 1em
+    margin-left: 0
+  
+  .current-plan
+    color: $gray
+    text-align: center
+    margin-top: 1rem
