@@ -1,2 +1,58 @@
-.project .grid
-  color: #fff
+.projects .grid article
+  .title
+    position: relative
+    p, span
+      margin-left: 0
+    span
+      margin-left: 0
+      position: absolute
+      top: 0
+      right: 0
+      font-size: .8em
+      font-weight: 300
+
+  .team-members
+    margin-top: 3rem
+    
+    img
+      font-size: 1.3rem
+      width: 2em
+      border-radius: 100%
+      border: solid .1em #fff
+      display: inline-block
+      margin: 0
+      &:not(:first-child)
+        margin-left: -.8em
+    
+  .tags
+    border: solid $light-gray
+    border-width: 1px 0
+    @include md-screen
+      display: flex
+      justify-content: flex-end
+      gap: .5em
+      padding: 1rem 0
+
+    span
+      margin: 1em
+      margin-left: 0
+      @include md-screen
+        margin: 0
+        padding: .3em .5em
+    
+  .row
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    gap: 1rem
+    padding-top: 1rem
+    @include md-screen
+      flex-direction: row
+
+    .progress
+      width: 15rem
+      max-width: 100%
+
+    span
+      color: $gray
