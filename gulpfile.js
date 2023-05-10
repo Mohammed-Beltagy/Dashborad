@@ -30,9 +30,9 @@ gulp.task("compile-sass", () =>
 // Redirect JS Files
 gulp.task("redirect-js", () =>
   gulp
-    .src("./stage/js/app.js")
+    .src("./stage/js/**.js")
     .pipe(uglify())
-    .pipe(gulp.dest("./docs/assets/"))
+    .pipe(gulp.dest("./docs/assets/js/"))
     .pipe(connect.reload())
 );
 
