@@ -136,6 +136,7 @@ function appendElementToGrid(
 
   const avatarElement = document.createElement("img");
   avatarElement.setAttribute("src", imageUrl);
+  avatarElement.setAttribute("alt", `${name}'s profile picture`);
   titleElement.appendChild(avatarElement);
 
   const nameElement = document.createElement("h4");

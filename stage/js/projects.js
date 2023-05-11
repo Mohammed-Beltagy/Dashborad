@@ -87,7 +87,10 @@ const projects = [
 function appendElementToGrid(project) {
   // Turn Arrays (team, tags) Into HTML String
   let team = project.team
-    .map((member) => `<img src="assets/images/team-members/${member}.png">`)
+    .map(
+      (member) =>
+        `<img src="assets/images/team-members/${member}.png" alt="${member}">`
+    )
     .join(" ");
   let tags = project.tags
     .map((tag) => `<span class="noevent-btn">${tag}</span>`)

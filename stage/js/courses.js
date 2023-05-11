@@ -91,9 +91,12 @@ const courses = [
     price: "250",
   },
 ];
+
 function appendElementToGrid(
   coverSrc,
+  coverAlt,
   avatarSrc,
+  avatarAlt,
   courseTitle,
   courseDesc,
   userCount,
@@ -116,8 +119,10 @@ function appendElementToGrid(
   // set the attributes and text content of the HTML elements
   article.classList.add("course");
   coverImg.src = coverSrc;
+  coverImg.alt = coverAlt; // add alt attribute for cover image
   coverImg.classList.add("cover");
   avatarImg.src = avatarSrc;
+  avatarImg.alt = avatarAlt; // add alt attribute for avatar image
   avatarImg.classList.add("avatar");
   titleDiv.classList.add("title");
   titleHeader.textContent = courseTitle;
@@ -146,10 +151,13 @@ function appendElementToGrid(
   // append the article element to the grid element
   document.querySelector(".grid").appendChild(article);
 }
+
 courses.forEach((course) => {
   appendElementToGrid(
     course.coverSrc,
+    `${course.courseTitle} cover image`, // set cover image alt text
     course.avatarSrc,
+    `${course.courseTitle} instructor avatar`, // set avatar image alt text
     course.courseTitle,
     course.courseDesc,
     course.userCount,

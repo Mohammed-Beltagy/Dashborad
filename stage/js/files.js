@@ -184,6 +184,7 @@ function appendElementToGrid(type, name, author, date, size) {
   articleEl.classList.add("file");
   iconEl.classList.add("fa-solid", "fa-download");
   imgEl.setAttribute("src", `assets/images/files/${type}.svg`);
+  imgEl.setAttribute("alt", `${name} file`);
   h3El.textContent = name;
   spanNameEl.classList.add("name");
   spanNameEl.textContent = author;
