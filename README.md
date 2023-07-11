@@ -26,7 +26,8 @@ This project was a great learning experience for me. Here are some of the things
 
 ## Links
 
-- [Style Link](https://elzerowebschool.github.io/HTML_And_CSS_Template_Four/) - This is the site that I rebuilt. The creator is Elzero Web School.
-- [Live Site](https://mohammed-beltagy.github.io/Dashborad/) - This is my implementation of the Dashboard Project.
+- [Style Link](https://elzerowebschool.github.io/HTML_And_CSS_Template_Four/) - I have rebuilt this website, originally created by Elzero Web School.
+- [Live Site](https://mohammed-beltagy.github.io/Dashborad/) - Check out my implementation of the Dashboard Project.
+- [Portfolio](https://beltagy.netlify.app) - Discover impressive projects with seamless functionality, and meticulous attention to detail.
 
 Thank you for taking the time to check out my project. If you have any questions or would like to discuss potential opportunities, please feel free to contact me.
